@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "conductive-coil-323706",
+  "private_key_id": "cc302462c3ac292816edd66d1b9bc09f6a005418",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDr2/MVg33TccJM\n0dToe5kWMNAbItRWnIZHiglMFEqxGCIbcPB+X18xMc/W7YIsv4YAuC42nEacUKQ/\nXG2MGrZm2CYFQ+0oZYATf26AnNIRoSY3aq6f6h4TnegDsOfG089JqM3qA+nvRbV/\no1yXLOs3LN0seSCeV3jncf+D8IuqG2aKlIPtd5j27ZgRpdbfREEq6oUZ4I4VxqVN\nyOKMB6y9amocxrUD/00fszWXLycS2eDgTOqkrCDkCTDhE1FrhuwzDbtUyYnNlPVY\nyvIpTX7ctIirSB+0Pjz89WO+PY88v1jlrREEtB3ybDteRdpaGuRYalPahVc/BkIu\nS2T3wBahAgMBAAECggEAO6rfkqQ6uziuumdlENFf15TOuOa1SBn+AHAjzPrfMHEW\nA9ItDRNMjjH3Tfy072QeXuU5T7h2RopCGwNjdUu2tErfR3q5LvyKi6QzzNafcDVP\n6ToUZkFAjZ7neLOS1yJzcMODID4QOudsNJebz2TeNo2jgGI+RcCERiz5QqQieQxM\nJFfCwKBjeNJ8VgaEKBHtChNO0P4NeQxc9/xGC/rMiEmrtpkAvPYMzcXkccSmZj29\nD4e4F7pDeBr0ppm6MzUCgQeX7gJXTi9jbjVlJxAS+MTvy0It9J+ydehWbjo7JE0i\nrKCYdjrLLjJnqMPUZ0rAOobiY6p1MZ1fzbWzkqjyRwKBgQD8PwLv1mmeTdx8T8iw\ntKRZc1qsS48BUa+OcOfAYDT4IiZp48MvTz+ZLhP6BGOIuXfdsZLVB/P9TdzLloVt\nyDKgM1G/1YMtWOFtHIgwy7o2rNhZxzqNxBXhLcvY2STqnU1PW2Mm6kWu+panaZ7B\nggv7qmGF/wsio9zyIaEIE7xr6wKBgQDvXoIc83A2MlvkrhA5a3eAskCtFK8hDLnd\nkINwQEzFrsGmZlJB2ipBZjpBKRYmA2gXZ+BkGyh7n8Vg85YJi8tZfGDYDx3i1hs3\nDds0PNhbDN1yxem+hMPMpg3r6neXHJanx9y/OCCyyLcra0y2RLB1He6Ka0eL6iux\nG9f6a14gowKBgC3KXoUdXjT/m2vxq9PwJvmaCDbIzKAHrR/lfRyeGl+FC4Yjc5ZO\nA5SSGcxEKbFzQcA78RS9CdzM2q0WmQgx1Ibiag+x+cssnFeLW2nIQfiU7f12Pjno\nA7TJ9HxcBuiUP6mNRHWXB6lZEio38TrdmcFIz8VcZDAYoQ5PboUh2A2bAoGAFkxO\ngJXo2ROd3dKdLkwliLaSMc1gdwqxccNZiyZiQHQEFBUqCnphP1BfktxZ9NaSZsPF\ncm3ZOpLqlxp52o/MNJzShK370bqyNFG1HsugN/Md2eg32wiRGMpLN7PSyh/epOiI\nVsPKv/zUm1XWgpApg+9y3jAaLR12TnxShUBlN1MCgYA7xmFU4KNuo/nMZMFa1UXT\nH73WW7yRj3wYUEqgJ4q5TTxA3yybQu2ecqQDxocvNpocPtmSkXsKI0BcNMRo+4O3\nr/UUvlj3Mfrp0Olo7wgggV3qSvWiOkpxaZIqYzyBkDxL0rsh5PWNCfygex+DjxGi\nINxn/9JHUIzini1/aJzpLg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bb-test@conductive-coil-323706.iam.gserviceaccount.com",
+  "client_id": "114348892083150128234",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bb-test%40conductive-coil-323706.iam.gserviceaccount.com"
+}

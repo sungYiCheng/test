@@ -1,0 +1,17 @@
+---
+- name: Change the working directory and terraform init
+  gather_facts: F # 跳過gather_facts
+  hosts: localhost
+
+  tasks:
+  - name: Test shell module terraform
+    shell: 
+      terraform init;
+      terraform apply -auto-approve
+    args:
+      chdir: ../Terraform/
+  #- name: Test shell module terraform apply
+  #  shell: 
+  #    terraform apply -auto-approve
+  #  args:
+  #    chdir: ../Terraform/

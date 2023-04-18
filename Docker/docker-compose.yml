@@ -1,0 +1,32 @@
+version: "2.1"
+services:
+  DevopsTest:
+    build:
+      context: .
+    image: bbking7788/nginx_test
+    container_name: nginx
+    ports:
+      - "8088:80"
+  Jenkins_BB:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - 8081:8080
+    container_name: jenkins
+    volumes:
+      - ~/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/local/bin/docker
+  Gitlab:
+    image: gitlab/gitlab-ce:13.0.9-ce.0
+    restart: always
+    privileged: true
+    ports:
+      - '8080:80'
+      - '443:443'
+      - '10022:22'
+    volumes:
+      - '~/gitlab/data:/var/opt/gitlab'
+      - '~/gitlab/logs:/var/log/gitlab'
+      - '~/gitlab/config:/etc/gitlab'

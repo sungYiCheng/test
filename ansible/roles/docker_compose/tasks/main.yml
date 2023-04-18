@@ -1,0 +1,17 @@
+---
+- name: copy Docker Compose files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ item }}"
+  loop:
+  - docker-compose.yml
+  - Dockerfile
+  - index.html
+  - nginx.conf
+
+# use files parameter to use multiple docker-compose.yml files
+- name: deploy Docker Compose stack
+  docker_compose:
+    project_src:  "./"
+    files:
+    - docker-compose.yml
