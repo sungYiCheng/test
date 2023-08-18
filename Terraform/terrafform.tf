@@ -5,6 +5,19 @@ provider "google" {
   zone    = "asia-east1-a"
 }
 
+resource "google_compute_firewall" "default" {
+  name    = "hrs-test-firewall"
+  network = google_compute_network.test_vpc_network.id
+
+  allow {
+    protocol = "tcp"
+    ports    = ["15566"]
+  }
+
+  source_ranges = [google_compute_subnetwork.test_subnet.ip_cidr_range]
+  source_tags = ["hrs-gcpdev-dev-test"]
+}
+
 resource "google_compute_instance" "test_vm" {
   name         = "hrs-dev-deploy-linux-asia-east1-a-1-test"
   machine_type = "e2-standard-2"
@@ -17,14 +30,14 @@ resource "google_compute_instance" "test_vm" {
     }
   }
 
-  tags = ["cm-all-allow", "http-server", "https-server"]
+  tags = ["cm-all-allow", "http-server", "https-server", "hrs-gcpdev-dev-test"]
 
   network_interface {
     # A default network is created for all GCP projects
     network    = google_compute_network.test_vpc_network.id
     subnetwork = google_compute_subnetwork.test_subnet.id
     access_config {
-        nat_ip = "34.81.76.129"
+        nat_ip = "34.81.76.129"   # Already Set fixed public IP, before.
     }
   }
 }

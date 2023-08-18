@@ -1,0 +1,58 @@
+pipeline {
+  agent any
+  tools {
+      terraform "Terraform 1.0.10"
+  }
+
+  stages {
+    stage('test echo 1') {
+      steps {
+        echo "11111111111"
+      }
+    }
+
+    stage('git clone') 
+    {
+        steps
+        {
+            git branch: 'master',
+            url: 'http://35.229.241.228/bbking7788/test1.git'
+        }
+    }
+
+    stage('test ls clone data') {
+      steps {
+        sh 'ls'
+        dir('Terraform')
+        {
+            echo 'In Terraform/'
+            sh 'ls'
+        }
+      }
+    }
+
+    stage('Terraform init') {
+      steps {
+        dir('Terraform')
+        {
+            sh 'terraform init'
+        }
+      }
+    }
+
+    stage('Terraform apply') {
+      steps {
+        dir('Terraform')
+        {
+            sh 'terraform apply --auto-approve'
+        }
+      }
+    }
+
+     stage('test echo 2') {
+      steps {
+        echo "222222"
+      }
+    }
+  }
+}
