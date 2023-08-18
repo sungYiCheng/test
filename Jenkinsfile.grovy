@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  tools {
+      terraform "Terraform 1.0.10"
+  }
+
+  stages {
+    stage('test echo 1') {
+      steps {
+        echo "11111111111"
+      }
+    }
+
+     stage('test echo 2') {
+      steps {
+        echo "222222"
+      }
+    }
+  }
+}
