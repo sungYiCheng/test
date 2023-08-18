@@ -6,7 +6,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "test_vm" {
-  name         = "hrs-dev-deploy-linux-asia-east1-a-1-test3"
+  name         = "hrs-dev-deploy-linux-asia-east1-a-1-testß"
   machine_type = "e2-standard-2"
   public_ips     = ["34.81.76.129"]
 
