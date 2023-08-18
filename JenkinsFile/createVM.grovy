@@ -18,7 +18,7 @@ pipeline {
         steps
         {
             git branch: 'master',
-            url: 'https://gitlab.com/bbking5566/Practice.git'
+            url: 'http://35.229.159.146:8087/BBking/devopstest.git'
         }
     }
 
