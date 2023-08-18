@@ -6,9 +6,9 @@ provider "google" {
 }
 
 resource "google_compute_instance" "test_vm" {
-  name         = "hrs-dev-deploy-linux-asia-east1-a-1-testß"
+  name         = "hrs-dev-deploy-linux-asia-east1-a-1-test"
   machine_type = "e2-standard-2"
-  public_ips     = ["34.81.76.129"]
+   #public_ips     = ["34.81.76.129"]
 
   boot_disk {
     initialize_params {
@@ -21,9 +21,22 @@ resource "google_compute_instance" "test_vm" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network       = "default"
+    network    = google_compute_network.test_vpc_network.id
+    subnetwork = google_compute_subnetwork.test_subnet.id
     access_config {
+        nat_ip = "34.81.76.129"
     }
   }
+}
+
+resource "google_compute_network" "test_vpc_network" {
+  name = "hrs-test-network"
+  auto_create_subnetworks = false
+}
+
+resource "google_compute_subnetwork" "test_subnet" {
+  name          = "hrs-test-subnetwork"
+  ip_cidr_range = "10.55.0.0/24"
+  network       = google_compute_network.test_vpc_network.id
 }
 
