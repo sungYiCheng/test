@@ -1,0 +1,12 @@
+--- 
+- name: Check if pip is already installed
+  command: pip --version
+  ignore_errors: true
+  changed_when: false
+  register: pip_is_installed
+
+- name: Install pip
+  apt:
+    name: python3-pip
+    update_cache: yes
+  when: pip_is_installed.rc != 0

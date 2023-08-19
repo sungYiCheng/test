@@ -1,0 +1,3 @@
+[BBB]
+35.229.159.146 ansible_port=22 ansible_user=bbking ansible_python_interpreter=/usr/bin/python3
+

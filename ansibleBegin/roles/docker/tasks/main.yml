@@ -1,0 +1,26 @@
+---
+- name: Install packages to allow apt to use a repository over HTTPS
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  loop: "{{ requried_packages }}"
+
+
+- name: Add docker's official GPG key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: Add Docker repository
+  apt_repository: 
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+    state: present
+    update_cache: yes
+
+- name: Update apt cache and install docker engine
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop: "{{ docker_engine }}"
+

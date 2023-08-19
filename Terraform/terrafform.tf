@@ -5,17 +5,17 @@ provider "google" {
   zone    = "asia-east1-a"
 }
 
-resource "google_compute_firewall" "default" {
+resource "google_compute_firewall" "ssh" {
   name    = "hrs-test-firewall"
   network = google_compute_network.test_vpc_network.id
 
   allow {
     protocol = "tcp"
-    ports    = ["15566"]
+    ports    = ["22"]
   }
 
-  source_ranges = [google_compute_subnetwork.test_subnet.ip_cidr_range]
-  source_tags = ["hrs-gcpdev-dev-test"]
+  source_ranges = ["0.0.0.0/0"]
+  target_tags = ["hrs-gcpdev-ssh-test"]
 }
 
 resource "google_compute_instance" "test_vm" {
@@ -30,7 +30,7 @@ resource "google_compute_instance" "test_vm" {
     }
   }
 
-  tags = ["cm-all-allow", "http-server", "https-server", "hrs-gcpdev-dev-test"]
+  tags = ["cm-all-allow", "http-server", "https-server", "hrs-gcpdev-ssh-test"]
 
   network_interface {
     # A default network is created for all GCP projects

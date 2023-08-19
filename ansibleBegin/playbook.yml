@@ -1,0 +1,10 @@
+---
+- hosts: BBB
+  become: true
+  vars_files:
+    - vars.yml
+
+  roles: 
+    - { role: pip, become: yes }
+    - { role: docker, become: yes }
+    - { role: docker_compose, become: yes }
